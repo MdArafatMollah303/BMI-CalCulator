@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI calculator</title>
+    <style>
+        body{
+            margin: 10;
+            padding: 10;
+            text-align: center;
+        background-image: linear-gradient(120deg,#ff6b6b,#5f27cd); 
+       
+        }
+        div{
+            width: 500px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            background-color: #ffffff;
+            transform: translate(-50%,-50%);
+            padding: 20px;
+            border-radius: 10px;
+
+        }
+        h1{
+            font-size: 40px;
+            font-weight: 600;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        .text{
+            text-align: left;
+            margin-left: 150px;
+        }
+        #w, #h{
+            color: teal;
+text-align: left;
+font-size: 20px;
+font-weight: 200;
+outline: none;
+border: none;
+background: none;
+border-bottom: 1px solid black;
+width: 200px;
+        }
+        #w:focus, #h:focus{
+            border-bottom: 2px solid rgb(3, 70, 70);
+            width: 300px;
+            transition: 0.5s;
+        }
+        #result{
+            color: rgba(37, 160, 209, 0.603);
+        }
+        #btn{
+            font-family: inherit;
+            margin-top: 10px;
+            border: none;
+            color: #fff;
+            background-image: linear-gradient(120deg,#ff6b6b,#5f27cd);
+            width: 250px;
+        padding: 10px;
+            border-radius: 30px;
+outline: none;
+cursor: pointer;
+        }
+        #btn:hover{
+            box-shadow: 1px 1px 10px rgba(0, 128, 128, 0.089);
+        }
+        #info{
+            font-size: 12px;
+            font-family: inherit;
+        }
+    </style>
+    <script>
+        function BMI(){
+            var h=document.getElementById('h').value;
+            var w=document.getElementById('w').value;
+            var bmi=w/(h/100*h/100);
+            var bmio=(bmi.toFixed(2));
+
+            document.getElementById("result").innerHTML="Your BMI is"+bmio;
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <h1>BMI Calculator</h1>
+    <p class="text">height:</p>
+    <input type="text"id="h">
+    <p class="text">weight:</p>
+    <input type="text"id="w">
+    <p id="info">height should be (cm) and weight should be on (kg)</p>
+    <p id="result"></p>
+    <button id="btn" onclick="BMI()">Calculate BMI</button>
+    <p>The ideal BMI between 18 and 25</p>
+    </div>
+</body>
+</html>
